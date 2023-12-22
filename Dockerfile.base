@@ -1,16 +1,4 @@
 FROM ubuntu:20.04
-RUN pip install papermill wine 
-
-RUN apt-get -qq update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -qq install -y unzip wget curl xorg && \
-    mkdir /mcr-install && \
-    mkdir /opt/mcr && \
-    cd /mcr-install && \
-    wget https://ssd.mathworks.com/supportfiles/downloads/R2020b/Release/6/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2020b_Update_6_glnxa64.zip && \
-    unzip -q MATLAB_Runtime_R2020b_Update_6_glnxa64.zip && \
-    ./install -destinationFolder /opt/MATLAB/MATLAB_Runtime -agreeToLicense yes -mode silent && \
-    cd / && \
-    rm -rf mcr-install
 
 COPY ./workspace /workspace/
 WORKDIR /workspace
