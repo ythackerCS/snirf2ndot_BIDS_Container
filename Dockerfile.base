@@ -1,5 +1,4 @@
 FROM ubuntu:20.04
-
 COPY ./workspace /workspace/
 WORKDIR /workspace
 USER root
