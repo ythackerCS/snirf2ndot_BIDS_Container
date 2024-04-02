@@ -6,12 +6,12 @@
   "schema-version": "1.0",
   "image": "registry.nrg.wustl.edu/docker/nrg-repo/yash/snirf2ndot_bids:latest",
   "type": "docker",
-  "command-line": "snirf2ndot /input/#SUBJECT_MAT# 1 /output/#SUBJECT_MAT# ",
+  "command-line": "chmod 777 /input/#SUBJECT_MAT# && ./snirf2ndot /input/#SUBJECT_MAT# && cp /input/*.mat /output/",
   "override-entrypoint": true,
   "mounts": [
     {
       "name": "scan-in",
-      "writable": false,
+      "writable": true,
       "path": "/input/"
     },
     {
