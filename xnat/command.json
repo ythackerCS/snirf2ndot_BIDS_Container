@@ -18,9 +18,16 @@
       "name": "mat-out",
       "writable": true,
       "path": "/output"
+    },
+    {
+      "name": "tmp",
+      "writable": true,
+      "path": "/tmp"
     }
   ],
-  "environment-variables": {},
+  "environment-variables": {
+    "MCR_CACHE_ROOT": "/tmp"
+  },
   "ports": {},
   "inputs": [
     {
@@ -102,8 +109,8 @@
       ]
     }
   ],
-  "reserve-memory": 8192,
-  "limit-memory": 8192,
+  "reserve-memory": 6192,
+  "limit-memory": 6192,
   "container-labels": {},
   "generic-resources": {},
   "ulimits": {},
